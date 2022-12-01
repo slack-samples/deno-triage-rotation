@@ -1,15 +1,19 @@
-# Deno Starter Template
+# Deno Triage Rotation
 
-This is a scaffolded Deno template used to build out Slack apps using the Slack
-CLI.
+This sample app allows users to create, manage, and delete rotation or on-call assignments.
+This app uses datastores to store rotations on a per-channel basis.
 
 **Guide Outline**:
 
+- [Supported Workflows](#supported-workflows)
 - [Setup](#setup)
   - [Install the Slack CLI](#install-the-slack-cli)
   - [Clone the Template](#clone-the-template)
 - [Create a Link Trigger](#create-a-link-trigger)
 - [Running Your Project Locally](#running-your-project-locally)
+- [Usage](#usage)
+  - [Manage Rotation](#workflow-1-manage-rotation)
+  - [Advance Rotation](#workflow-2-advance-rotation)
 - [Datastores](#datastores)
 - [Testing](#testing)
 - [Deploying Your App](#deploying-your-app)
@@ -18,6 +22,11 @@ CLI.
 - [Resources](#resources)
 
 ---
+
+## Supported Workflows
+
+- *Manage rotation*: Create, manage, or delete an existing rotation. This workflow is triggered by a shortcut
+- *Advance rotation*: This workflow updates the rotation to the latest, notifies users. This workflow is triggered by a schedule
 
 ## Setup
 
@@ -38,10 +47,10 @@ Start by cloning this repository:
 
 ```zsh
 # Clone this project onto your machine
-$ slack create my-app -t slack-samples/deno-starter-template
+$ slack create triage-rotation -t slack-samples/deno-triage-rotation
 
 # Change into this project directory
-$ cd my-app
+$ cd triage-rotation
 ```
 
 ## Create a Link Trigger
@@ -66,7 +75,7 @@ To create a link trigger for the workflow in this template, run the following
 command:
 
 ```zsh
-$ slack trigger create --trigger-def triggers/sample_trigger.ts
+$ slack trigger create --trigger-def triggers/manage_rotation.ts
 ```
 
 After selecting a Workspace, the output provided will include the link trigger
@@ -96,17 +105,37 @@ Once running, click the
 
 To stop running locally, press `<CTRL> + C` to end the process.
 
+## Usage
+
+Add your dev app to the channel where you shared your link trigger as a member. You can do this by @mentioning the app directly in a message in the channel. 
+
+
+### Workflow 1: Manage Rotation
+
+With your app running locally (`slack run`), click the link trigger that you shared in your Slack workspace. The workflow's first step, an input form, will appear where you can complete the required fields to create a rotation for the channel where you triggered the worklow. 
+
+If a rotation belonging to the channel already exists, the form will show details about the rotation and allow you to edit those fields. 
+
+After you submit the form, the next step in the workflow creates a rotation and creates a scheduled trigger for workflow #2: Advance Rotation. 
+
+To check whether your rotation has been created, just trigger the workflow from the channel again and look at the existing rotation details. You can also delete an existing rotation from this form. 
+
+### Workflow 2: Advance Rotation
+
+This workflow is triggered by a a scheduled trigger created in a step in the earlier workflow. This workflow notifies the current rotation assignee in the channel and then advances the rotation. 
+
+:lightbulb: This app comes set up with a `.env` file and the ability to turn on a `debugMode` to give you a bit more control on when *Advance Rotation* (see, `workflows/advance_rotation.ts`) is triggered. I've found this helpful in debugging. 
+
+
 ## Datastores
 
-If your app needs to store any data, a datastore would be the right place for
-that. For an example of a datastore, see `datastores/sample_datastore.ts`. Using
-a datastore also requires the `datastore:write`/`datastore:read` scopes to be
-present in your manifest.
+This app uses a datastore, see `datastores/rotations.ts`. Using
+a datastore also requires the `datastore:write`/`datastore:read` scopes, which is included in your app's `manifest.ts` file. 
 
 ## Testing
 
 For an example of how to test a function, see
-`functions/sample_function_test.ts`. Test filenames should be suffixed with
+`functions/open_form/handler_test.ts`. Test filenames should be suffixed with
 `_test`.
 
 Run all tests with `deno test`:
