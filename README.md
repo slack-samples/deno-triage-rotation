@@ -1,7 +1,7 @@
 # Deno Triage Rotation
 
-This sample app allows users to create, manage, and delete rotation or on-call assignments.
-This app uses datastores to store rotations on a per-channel basis.
+This sample app allows users to create, manage, and delete rotation or on-call
+assignments. This app uses datastores to store rotations on a per-channel basis.
 
 **Guide Outline**:
 
@@ -25,8 +25,10 @@ This app uses datastores to store rotations on a per-channel basis.
 
 ## Supported Workflows
 
-- *Manage rotation*: Create, manage, or delete an existing rotation. This workflow is triggered by a shortcut
-- *Advance rotation*: This workflow updates the rotation to the latest, notifies users. This workflow is triggered by a schedule
+- _Manage rotation_: Create, manage, or delete an existing rotation. This
+  workflow is triggered by a shortcut
+- _Advance rotation_: This workflow updates the rotation to the latest, notifies
+  users. This workflow is triggered by a schedule
 
 ## Setup
 
@@ -107,30 +109,42 @@ To stop running locally, press `<CTRL> + C` to end the process.
 
 ## Usage
 
-Add your dev app to the channel where you shared your link trigger as a member. You can do this by @mentioning the app directly in a message in the channel. 
-
+Add your dev app to the channel where you shared your link trigger as a member.
+You can do this by @mentioning the app directly in a message in the channel.
 
 ### Workflow 1: Manage Rotation
 
-With your app running locally (`slack run`), click the link trigger that you shared in your Slack workspace. The workflow's first step, an input form, will appear where you can complete the required fields to create a rotation for the channel where you triggered the worklow. 
+With your app running locally (`slack run`), click the link trigger that you
+shared in your Slack workspace. The workflow's first step, an input form, will
+appear where you can complete the required fields to create a rotation for the
+channel where you triggered the worklow.
 
-If a rotation belonging to the channel already exists, the form will show details about the rotation and allow you to edit those fields. 
+If a rotation belonging to the channel already exists, the form will show
+details about the rotation and allow you to edit those fields.
 
-After you submit the form, the next step in the workflow creates a rotation and creates a scheduled trigger for workflow #2: Advance Rotation. 
+After you submit the form, the next step in the workflow creates a rotation and
+creates a scheduled trigger for workflow #2: Advance Rotation.
 
-To check whether your rotation has been created, just trigger the workflow from the channel again and look at the existing rotation details. You can also delete an existing rotation from this form. 
+To check whether your rotation has been created, just trigger the workflow from
+the channel again and look at the existing rotation details. You can also delete
+an existing rotation from this form.
 
 ### Workflow 2: Advance Rotation
 
-This workflow is triggered by a a scheduled trigger created in a step in the earlier workflow. This workflow notifies the current rotation assignee in the channel and then advances the rotation. 
+This workflow is triggered by a a scheduled trigger created in a step in the
+earlier workflow. This workflow notifies the current rotation assignee in the
+channel and then advances the rotation.
 
-:lightbulb: This app comes set up with a `.env` file and the ability to turn on a `debugMode` to give you a bit more control on when *Advance Rotation* (see, `workflows/advance_rotation.ts`) is triggered. I've found this helpful in debugging. 
-
+:lightbulb: This app comes set up with a `.env` file and the ability to turn on
+a `debugMode` to give you a bit more control on when _Advance Rotation_ (see,
+`workflows/advance_rotation.ts`) is triggered. I've found this helpful in
+debugging.
 
 ## Datastores
 
-This app uses a datastore, see `datastores/rotations.ts`. Using
-a datastore also requires the `datastore:write`/`datastore:read` scopes, which is included in your app's `manifest.ts` file. 
+This app uses a datastore, see `datastores/rotations.ts`. Using a datastore also
+requires the `datastore:write`/`datastore:read` scopes, which is included in
+your app's `manifest.ts` file.
 
 ## Testing
 

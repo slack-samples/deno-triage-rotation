@@ -164,6 +164,7 @@ export function getNextAdvanceTimeInSec(
  *
  * https://api.slack.com/future/triggers/scheduled#schedule
  */
+// deno-lint-ignore no-explicit-any
 export function getTriggerSchedule(debugMode: boolean, inputs: any) {
   const DELAY_SEC = 10;
   const { start_time } = inputs;
@@ -206,6 +207,7 @@ export function getTriggerSchedule(debugMode: boolean, inputs: any) {
  * trigger `frequency` object properties:
  * https://api.slack.com/future/triggers/scheduled#frequency
  */
+// deno-lint-ignore no-explicit-any
 function getTriggerScheduleFrequency(inputs: any) {
   const { start_time, repeats_every, repeats_every_number } = inputs;
   const startDate = new Date(start_time * 1000);
