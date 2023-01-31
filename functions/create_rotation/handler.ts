@@ -83,8 +83,6 @@ export default SlackFunction(
       };
     }
 
-    console.log("NEW SCHEDULED TRIGGER", newScheduledTriggerResp);
-
     // 2. Create a new rotation item shape
     const newRotation: DatastoreItem<typeof RotationDatastore.definition> = {
       rotation_trigger_id: newScheduledTriggerResp.trigger.id,
@@ -102,8 +100,6 @@ export default SlackFunction(
       ),
     };
 
-    console.log("MANUAL LOG: New Rotation!!!", newRotation);
-
     // write to the database
     const putResp = await client.apps.datastore.put<
       typeof RotationDatastore.definition
@@ -115,8 +111,6 @@ export default SlackFunction(
     if (!putResp.ok) {
       return { error: putResp.error ?? "Failed to update with rotation" };
     }
-
-    console.log("MANUAL LOG: New Rotation Put Resp", putResp);
 
     // 3. Delete any past existing triggers that might have existed on
     if (Object.keys(channelGetResp.item).length > 0) {
@@ -130,7 +124,6 @@ export default SlackFunction(
             "Failed to delete past scheduled trigger",
         };
       }
-      console.log("DELETED", deleteTriggerResp);
     }
 
     return { outputs: {} };

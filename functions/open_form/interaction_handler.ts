@@ -14,7 +14,6 @@ import { buildRotationForm } from "./blocks.ts";
 export const processForm: ViewSubmissionHandler<
   typeof OpenFormFunction.definition
 > = async ({ view, client, body }): Promise<void> => {
-  console.log("MANUAL LOG: VIEW STATE", view.state);
   const { values } = view.state;
 
   // get the start time
@@ -42,8 +41,6 @@ export const processForm: ViewSubmissionHandler<
     repeats_every_number:
       values["repeats_every-input"]["repeats_every-number-input"]["value"],
   };
-
-  console.log("MANUAL LOG: Rotation Form Values", rotationFormValues);
 
   // Complete the function and pass rotation form details
   // to the next function in the workflow
@@ -101,10 +98,6 @@ export const deleteRotation: BlockActionHandler<
     );
     return;
   }
-  console.log("DELETE RESP", deleteResp);
-
-  console.log("PRINT THE BODY", body);
-
   // update the view
   const viewUpdateRes = await client.views.update({
     view_id: body.view.id,

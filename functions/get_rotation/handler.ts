@@ -12,8 +12,6 @@ import RotationDatastore from "../../datastores/rotations.ts";
 export default SlackFunction(
   GetRotationFunctionDefinition,
   async ({ inputs, client }) => {
-    console.log("MANUAL LOG: GetRotation");
-
     // Step 1: check rotation datastore for existing records associated with channel id
     // For more info on how to format datastore queries:
     // https://api.slack.com/future/datastores#query_multiple

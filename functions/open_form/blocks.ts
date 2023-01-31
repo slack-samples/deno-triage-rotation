@@ -221,7 +221,6 @@ export const buildRotationForm = (
     ],
   };
 
-  console.log(formView);
   return formView;
 };
 
