@@ -61,7 +61,7 @@ export default SlackFunction(
           value: inputs.channel,
         },
       },
-      //@ts-expect-error type error due to frequency type of "once" not being compatible with other
+      // @ts-expect-error type error due to frequency type of "once" not being compatible with other
       schedule: getTriggerSchedule(debugMode, inputs),
     };
 
@@ -112,7 +112,7 @@ export default SlackFunction(
       return { error: putResp.error ?? "Failed to update with rotation" };
     }
 
-    // 3. Delete any past existing triggers that might have existed on
+    // 3. Delete any past existing triggers that might have existed for rotation
     if (Object.keys(channelGetResp.item).length > 0) {
       const deleteTriggerResp = await client.workflows.triggers.delete({
         trigger_id: channelGetResp.item.rotation_trigger_id,
@@ -130,6 +130,16 @@ export default SlackFunction(
   },
 );
 
+/**
+ * This function takes a start time (in seconds) and returns a time
+ * that reflects start time + delta in seconds. Delta is calculated using the
+ * repeatsEveryNumber and repeatsEvery options saved alongside the rotation.
+ *
+ * @param startTimeInSec A number representing UNIX time in seconds
+ * @param repeatsEveryNumber frequency of repetition, i.e. 1 day vs 3 days
+ * @param repeatsEvery day or week
+ * @returns
+ */
 export function getNextAdvanceTimeInSec(
   startTimeInSec: number,
   repeatsEveryNumber: number,

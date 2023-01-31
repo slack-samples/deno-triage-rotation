@@ -27,10 +27,10 @@ assignments. This app uses datastores to store rotations on a per-channel basis.
 
 ## Supported Workflows
 
-- _Manage rotation_: Create, manage, or delete an existing rotation. This
-  workflow is triggered by a shortcut
-- _Advance rotation_: This workflow updates the rotation to the latest, notifies
-  users. This workflow is triggered by a schedule
+- **Manage rotation**: Create, manage, or delete an existing rotation. This
+  workflow is triggered by a shortcut.
+- **Advance rotation**: This workflow updates the rotation to the latest, notifies
+  users. This workflow is triggered by a schedule.
 
 ## Setup
 

@@ -18,7 +18,7 @@ export const CreateRotationFunctionDefinition = DefineFunction({
   source_file: "functions/create_rotation/handler.ts",
   input_parameters: {
     properties:
-      // Let's reuse one functions output parameters this functions inputs!
+      // Let's reuse OpenFormFunction's output parameters as this functions inputs!
       OpenFormFunctionDefinition.export().output_parameters.properties,
     required: [
       "order",

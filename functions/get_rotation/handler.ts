@@ -7,7 +7,7 @@ import RotationDatastore from "../../datastores/rotations.ts";
 /**
  * This is the handling code for the GetRotationFunction. It will:
  * 1. Check whether a rotation exists
- * 2. Get the rotation and return OR return an output
+ * 2. Get the rotation and return OR return an output with no rotation
  */
 export default SlackFunction(
   GetRotationFunctionDefinition,

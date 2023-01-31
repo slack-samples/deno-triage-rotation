@@ -8,9 +8,6 @@ import RotationDatastore from "../../datastores/rotations.ts";
 import { OpenFormFunctionDefinition as OpenFormFunction } from "./definition.ts";
 import { buildRotationForm } from "./blocks.ts";
 
-/**
- * @param param0
- */
 export const processForm: ViewSubmissionHandler<
   typeof OpenFormFunction.definition
 > = async ({ view, client, body }): Promise<void> => {
