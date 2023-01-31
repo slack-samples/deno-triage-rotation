@@ -151,7 +151,7 @@ your app's `manifest.ts` file.
 ## Testing
 
 For an example of how to test a function, see
-`functions/open_form/handler_test.ts`. Test filenames should be suffixed with
+`functions/advance_rotation/handler_test.ts`. Test filenames should be suffixed with
 `_test`.
 
 Run all tests with `deno test`:
