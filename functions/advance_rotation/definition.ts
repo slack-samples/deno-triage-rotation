@@ -28,4 +28,14 @@ export const AdvanceRotationFunctionDefinition = DefineFunction({
     },
     required: ["rotation"],
   },
+  output_parameters: {
+    properties: {
+      rotation: {
+        type: Schema.types.object,
+        properties: RotationDatastore.export().attributes,
+        required: ["rotation_trigger_id", "channel", "order"],
+      },
+    },
+    required: ["rotation"],
+  },
 });

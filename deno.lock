@@ -4,6 +4,7 @@
     "https://cdn.skypack.dev/-/@slack/types@v2.8.0-RHFVu835KaRqk0tLzHs4/dist=es2019,mode=imports/optimized/@slack/types.js": "5e3ddf79ee461eeed2c16c663bdb88e6cdfb50adab375fb2416b4a408a4b163c",
     "https://cdn.skypack.dev/-/@slack/types@v2.8.0-RHFVu835KaRqk0tLzHs4/dist=es2019,mode=types/dist/index.d.ts": "2f662461c41a9dcb8b6ae1aa2263c75b12da3554cd0c25f5b990c408d28a1505",
     "https://cdn.skypack.dev/@slack/types?dts": "a80f29c215c57af18fa08bbb21031bd219f9b6c22e237836a65b8c80d40fb793",
+    "https://crux.land/api/get/2KNRVU.ts": "6a77d55844aba78d01520c5ff0b2f0af7f24cc1716a0de8b3bb6bd918c47b5ba",
     "https://deno.land/std@0.134.0/_deno_unstable.ts": "23a1a36928f1b6d3b0170aaa67de09af12aa998525f608ff7331b9fb364cbde6",
     "https://deno.land/std@0.134.0/_util/assert.ts": "e94f2eb37cebd7f199952e242c77654e43333c1ac4c5c700e929ea3aa5489f74",
     "https://deno.land/std@0.134.0/_util/os.ts": "49b92edea1e82ba295ec946de8ffd956ed123e2948d9bd1d3e901b04e4307617",
@@ -36,6 +37,10 @@
     "https://deno.land/std@0.138.0/flags/mod.ts": "019df8a63ed24df2d10be22e8983aa9253623e871228a2f8f328ff2d0404f7ef",
     "https://deno.land/std@0.149.0/_util/assert.ts": "e94f2eb37cebd7f199952e242c77654e43333c1ac4c5c700e929ea3aa5489f74",
     "https://deno.land/std@0.149.0/encoding/jsonc.ts": "11ad83eaae80e94ecd26190af950e90ca147b9f39838a059da804b591a803b11",
+    "https://deno.land/std@0.153.0/fmt/colors.ts": "ff7dc9c9f33a72bd48bc24b21bbc1b4545d8494a431f17894dbc5fe92a938fc4",
+    "https://deno.land/std@0.153.0/testing/_diff.ts": "141f978a283defc367eeee3ff7b58aa8763cf7c8e0c585132eae614468e9d7b8",
+    "https://deno.land/std@0.153.0/testing/_format.ts": "cd11136e1797791045e639e9f0f4640d5b4166148796cad37e6ef75f7d7f3832",
+    "https://deno.land/std@0.153.0/testing/asserts.ts": "d6595cfc330b4233546a047a0d7d57940771aa9d97a172ceb91e84ae6200b3af",
     "https://deno.land/std@0.173.0/collections/filter_values.ts": "5b9feaf17b9a6e5ffccdd36cf6f38fa4ffa94cff2602d381c2ad0c2a97929652",
     "https://deno.land/std@0.173.0/collections/without_all.ts": "a89f5da0b5830defed4f59666e188df411d8fece35a5f6ca69be6ca71a95c185",
     "https://deno.land/std@0.173.0/dotenv/mod.ts": "6e1dbc4737e3f62a5c1f3d2a26a0e5626fb168a198375bef574fedbe86a79f20",
@@ -387,6 +392,7 @@
     "https://deno.land/x/deno_slack_sdk@1.4.4/types/types.ts": "0a98697da9daf6adc5750abb7c551b809702298167bfd09d4905daf3bddd7584",
     "https://deno.land/x/deno_slack_sdk@1.4.4/workflows/mod.ts": "2c44ad92311754a9a9003f3ad104470db045b0a461d5432562a5937e307b6cd1",
     "https://deno.land/x/deno_slack_sdk@1.4.4/workflows/types.ts": "47f36e9909f7c8e16527422e32b2f5fe307aa4f170e9bac14032de3560d412e9",
-    "https://deno.land/x/deno_slack_sdk@1.4.4/workflows/workflow-step.ts": "41bc0f91b58bd91f875bf32ce51b2b8b479e9dadfe3c43a5703dd418b83eb4c8"
+    "https://deno.land/x/deno_slack_sdk@1.4.4/workflows/workflow-step.ts": "41bc0f91b58bd91f875bf32ce51b2b8b479e9dadfe3c43a5703dd418b83eb4c8",
+    "https://deno.land/x/mock_fetch@0.3.0/mod.ts": "7e7806c65ab17b2b684c334c4e565812bdaf504a3e9c938d2bb52bb67428bc89"
   }
 }

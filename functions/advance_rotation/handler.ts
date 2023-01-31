@@ -55,7 +55,9 @@ export default SlackFunction(
     }
 
     return {
-      outputs: {},
+      outputs: {
+        rotation: putResponse.item,
+      },
     };
   },
 );
