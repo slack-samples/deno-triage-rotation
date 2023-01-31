@@ -3,6 +3,8 @@
 This sample app allows users to create, manage, and delete rotation or on-call
 assignments. This app uses datastores to store rotations on a per-channel basis.
 
+![deno-triage-rotation](https://user-images.githubusercontent.com/55667998/215822815-8555fdb2-694a-4799-b9fc-59670519ae6e.gif)
+
 **Guide Outline**:
 
 - [Supported Workflows](#supported-workflows)
