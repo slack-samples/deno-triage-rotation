@@ -139,7 +139,7 @@ channel and then advances the rotation.
 
 :bulb: This app comes set up with a `.env` file and the ability to turn on
 a `debugMode` to give you a bit more control on when _Advance Rotation_ (see,
-`workflows/advance_rotation.ts`) is triggered. I've found this helpful in
+`workflows/advance_rotation.ts`) is triggered. This is helpful for
 debugging.
 
 ## Datastores
