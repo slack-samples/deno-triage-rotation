@@ -1,4 +1,4 @@
-import { DefineFunction, Schema } from "deno-slack-sdk/mod.ts";
+import { DefineFunction, Schema, DefineProperty } from "deno-slack-sdk/mod.ts";
 import UserArray from "../../types/user_array.ts";
 
 const FORMAT_ROTATION_FUNCTION_CALLBACK_ID = "format_rotation";
@@ -23,7 +23,7 @@ export const FormatRotationFunctionDefinition = DefineFunction({
   source_file: "functions/format_rotation/handler.ts",
   input_parameters: {
     properties: {
-      rotation: {
+      rotation: DefineProperty({
         type: Schema.types.object,
         properties: {
           rotation_trigger_id: {
@@ -41,7 +41,7 @@ export const FormatRotationFunctionDefinition = DefineFunction({
           },
         },
         required: ["rotation_trigger_id", "channel", "order"],
-      },
+      }),
     },
     required: ["rotation"],
   },
