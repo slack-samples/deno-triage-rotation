@@ -1,4 +1,4 @@
-import { DefineFunction, Schema, DefineProperty } from "deno-slack-sdk/mod.ts";
+import { DefineFunction, DefineProperty, Schema } from "deno-slack-sdk/mod.ts";
 import UserArray from "../../types/user_array.ts";
 
 const FORMAT_ROTATION_FUNCTION_CALLBACK_ID = "format_rotation";
