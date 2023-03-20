@@ -1,5 +1,4 @@
 import { SlackFunction } from "deno-slack-sdk/mod.ts";
-import { DatastoreItem } from "deno-slack-api/typed-method-types/apps.ts";
 
 import { AdvanceRotationFunctionDefinition } from "./definition.ts";
 
@@ -11,10 +10,7 @@ export default SlackFunction(
   async ({ inputs, client }) => {
     const { order: assigneeOrder } = inputs.rotation;
     const {
-      rotation_trigger_id,
       channel,
-      message,
-      start_time,
       repeats_every,
       repeats_every_number,
       last_advance_time,
@@ -25,29 +21,19 @@ export default SlackFunction(
     const first = assigneeOrder.shift();
     const assignees = [...assigneeOrder, first];
 
-    // 2: generate a new rotation object
-    const newRotation: DatastoreItem<typeof RotationDatastore.definition> = {
-      rotation_trigger_id,
-      channel,
-      message,
-      start_time,
-      repeats_every,
-      repeats_every_number,
-      order: assignees,
-      last_advance_time: next_advance_time,
-      next_advance_time: getNextAdvanceTimeInSec(
-        last_advance_time,
-        repeats_every_number,
-        repeats_every,
-      ),
-    };
-
-    // 3: update or create the rotation in the datastore
-    const putResponse = await client.apps.datastore.put<
-      typeof RotationDatastore.definition
-    >({
+    // 2: update the rotation in the datastore
+    const putResponse = await client.apps.datastore.update({
       datastore: RotationDatastore.name,
-      item: newRotation,
+      item: {
+        channel,
+        order: assignees,
+        last_advance_time: next_advance_time,
+        next_advance_time: getNextAdvanceTimeInSec(
+          last_advance_time,
+          repeats_every_number,
+          repeats_every,
+        ),
+      },
     });
 
     if (!putResponse.ok) {
