@@ -22,7 +22,9 @@ export default SlackFunction(
     const assignees = [...assigneeOrder, first];
 
     // 2: update the rotation in the datastore
-    const putResponse = await client.apps.datastore.update({
+    const putResponse = await client.apps.datastore.update<
+      typeof RotationDatastore.definition
+    >({
       datastore: RotationDatastore.name,
       item: {
         channel,
