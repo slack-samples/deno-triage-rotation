@@ -11,9 +11,15 @@ const { createContext } = SlackFunctionTester(
 // Replaces globalThis.fetch with the mocked copy
 mf.install();
 
-mf.mock("POST@/api/apps.datastore.put", () => {
+mf.mock("POST@/api/apps.datastore.update", async (args) => {
+  const body = await args.formData();
+  const item = body.get("item") ?? "{}";
+  const { order } = JSON.parse(item.toString());
+
   return new Response(
-    `{"ok": true, "item": {"repeats_every": "day"}}`,
+    `{"ok": true, "item": {"repeats_every": "day", "order": ${
+      JSON.stringify(order)
+    } }}`,
     {
       status: 200,
     },
@@ -23,7 +29,7 @@ mf.mock("POST@/api/apps.datastore.put", () => {
 Deno.test("Sample function test", async () => {
   const inputs = {
     rotation: {
-      order: ["testuser1"],
+      order: ["testuser1", "realuser2", "fakeuser3"],
       channel: "channelid",
       message: "testmessage",
       start_time: 1,
@@ -35,8 +41,10 @@ Deno.test("Sample function test", async () => {
   };
 
   const { outputs } = await AdvanceRotationFunction(createContext({ inputs }));
-  await assertEquals(
-    outputs?.rotation.repeats_every,
-    "day",
-  );
+  assertEquals(outputs?.rotation.repeats_every, "day");
+  assertEquals(outputs?.rotation.order, [
+    "realuser2",
+    "fakeuser3",
+    "testuser1",
+  ]);
 });
