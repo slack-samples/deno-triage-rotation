@@ -1,6 +1,6 @@
 import { SlackFunction } from "deno-slack-sdk/mod.ts";
+import { DatastoreItem } from "deno-slack-api/types.ts";
 import { ScheduledTrigger } from "deno-slack-api/typed-method-types/workflows/triggers/scheduled.ts";
-import { DatastoreItem } from "deno-slack-api/typed-method-types/apps.ts";
 
 import { CreateRotationFunctionDefinition } from "./definition.ts";
 

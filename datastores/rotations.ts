@@ -1,5 +1,5 @@
 import { DefineDatastore, Schema } from "deno-slack-sdk/mod.ts";
-import { DatastoreItem } from "deno-slack-api/typed-method-types/apps.ts";
+import { DatastoreItem } from "deno-slack-api/types.ts";
 
 /**
  * Datastores are a Slack-hosted location to store

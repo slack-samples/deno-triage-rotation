@@ -1,5 +1,5 @@
 import { SlackFunction } from "deno-slack-sdk/mod.ts";
-import { DatastoreItem } from "deno-slack-api/typed-method-types/apps.ts";
+import { DatastoreItem } from "deno-slack-api/types.ts";
 
 import { AdvanceRotationFunctionDefinition } from "./definition.ts";
 
@@ -9,6 +9,7 @@ import { getNextAdvanceTimeInSec } from "../create_rotation/handler.ts";
 export default SlackFunction(
   AdvanceRotationFunctionDefinition,
   async ({ inputs, client }) => {
+    // TODO: the `rotation` input is typed as any - what can we do to improve this?
     const { order: assigneeOrder } = inputs.rotation;
     const {
       rotation_trigger_id,

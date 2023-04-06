@@ -1,4 +1,4 @@
-import { Trigger } from "deno-slack-api/types.ts";
+import { Trigger } from "deno-slack-sdk/types.ts";
 import ManageRotationWorkflow from "../workflows/manage_rotation.ts";
 /**
  * This is the definition for a shortcut trigger that will
