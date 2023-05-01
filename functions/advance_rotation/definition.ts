@@ -20,8 +20,11 @@ export const AdvanceRotationFunctionDefinition = DefineFunction({
   input_parameters: {
     properties: {
       rotation: {
+        // TODO: extract this into a custom type and register at the manifest level for easy re-use
+        // across inputs and outputs (and other functions/workflows, where relevant)
         type: Schema.types.object,
         // This function accepts input properties equivalent to a RotationDatastore item
+        // TODO: would be a nice SDK feature to auto-generated a custom type via DefineType from datastore-exported attributes
         properties: RotationDatastore.export().attributes,
         required: ["rotation_trigger_id", "channel", "order"],
       },
