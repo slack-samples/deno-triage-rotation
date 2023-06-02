@@ -20,6 +20,9 @@ const AdvanceRotationWorkflow = DefineWorkflow({
       channel: {
         type: Schema.slack.types.channel_id,
       },
+      interactivity: {
+        type: Schema.slack.types.interactivity,
+      },
     },
     required: ["channel"],
   },
@@ -30,6 +33,7 @@ const rotationStep = AdvanceRotationWorkflow.addStep(
   GetRotationFunctionDefinition,
   {
     channel: AdvanceRotationWorkflow.inputs.channel,
+    interactivity: AdvanceRotationWorkflow.inputs.interactivity,
   },
 );
 
