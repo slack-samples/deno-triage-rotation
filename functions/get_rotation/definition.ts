@@ -9,7 +9,7 @@ export const GET_ROTATION_FUNCTION_CALLBACK_ID = "get_rotation";
  * datastore definition: /datastores/rotations.ts
  *
  * More on defining functions here:
- * https://api.slack.com/future/functions/custom
+ * https://api.slack.com/automation/functions/custom
  */
 export const GetRotationFunctionDefinition = DefineFunction({
   callback_id: GET_ROTATION_FUNCTION_CALLBACK_ID,

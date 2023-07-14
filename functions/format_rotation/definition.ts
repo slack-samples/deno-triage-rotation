@@ -13,7 +13,7 @@ const FORMAT_ROTATION_FUNCTION_CALLBACK_ID = "format_rotation";
  * with existing values supplied.
  *
  * More on defining functions here:
- * https://api.slack.com/future/functions/custom
+ * https://api.slack.com/automation/functions/custom
  */
 export const FormatRotationFunctionDefinition = DefineFunction({
   callback_id: FORMAT_ROTATION_FUNCTION_CALLBACK_ID,

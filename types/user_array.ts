@@ -5,7 +5,7 @@ import { DefineType, Schema } from "deno-slack-sdk/mod.ts";
  * ids. This array is used as the rotation order for our app.
  *
  * For more on defining custom types:
- * https://api.slack.com/future/types/custom
+ * https://api.slack.com/automation/types/custom
  */
 export default DefineType({
   name: "user_array",
