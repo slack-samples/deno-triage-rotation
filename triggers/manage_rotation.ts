@@ -9,7 +9,7 @@ import ManageRotationWorkflow from "../workflows/manage_rotation.ts";
  * such as a user pressing a button or when a specific event occurs.
  *
  * For more on triggers:
- * https://api.slack.com/future/triggers
+ * https://api.slack.com/automation/triggers
  */
 const manageRotationWorkflow: Trigger<
   typeof ManageRotationWorkflow.definition

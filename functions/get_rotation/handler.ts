@@ -14,7 +14,7 @@ export default SlackFunction(
   async ({ inputs, client }) => {
     // Step 1: check rotation datastore for existing records associated with channel id
     // For more info on how to format datastore queries:
-    // https://api.slack.com/future/datastores#query_multiple
+    // https://api.slack.com/automation/datastores#query_multiple
     const queryResp = await client.apps.datastore.query<
       typeof RotationDatastore.definition
     >({

@@ -6,10 +6,10 @@ import { OpenFormFunctionDefinition } from "../functions/open_form/definition.ts
 /**
  * A workflow is a set of steps that are executed in order.
  * Each step in a workflow is a function.
- * https://api.slack.com/future/workflows
+ * https://api.slack.com/automation/workflows
  *
  * This workflow uses interactivity. Learn more at:
- * https://api.slack.com/future/forms#add-interactivity
+ * https://api.slack.com/automation/forms#add-interactivity
  */
 const ManageRotationWorkflow = DefineWorkflow({
   callback_id: "manage_rotation",
@@ -21,7 +21,7 @@ const ManageRotationWorkflow = DefineWorkflow({
    * and more.
    *
    * For more on adding input parameters:
-   * https://api.slack.com/future/workflows#workflow-adding-input-parameters
+   * https://api.slack.com/automation/workflows#defining-input-parameters
    *
    * Where do the values for this workflow's input parameters come from? Check out
    * the trigger for this workflow /triggers/manage_rotation.ts
@@ -66,7 +66,7 @@ const currentRotationStep = ManageRotationWorkflow.addStep(
  * For more info on Block Kit interactivity: https://api.slack.com/block-kit/interactivity
  *
  * Don't need interactivity? Checkout the the built-in OpenForm function.
- * https://api.slack.com/future/functions#open-a-form
+ * https://api.slack.com/reference/functions/open_form
  */
 const formStep = ManageRotationWorkflow.addStep(
   OpenFormFunctionDefinition,

@@ -122,7 +122,7 @@ export const endFunctionWithError: ViewClosedHandler<
    * function with an error and a helpful message for logging.
    *
    * For more on logging activity:
-   * https://api.slack.com/future/logging
+   * https://api.slack.com/automation/logging
    */
   return client.functions.completeError({
     function_execution_id,
