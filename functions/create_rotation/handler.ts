@@ -165,7 +165,7 @@ export function getNextAdvanceTimeInSec(
  * This helper function returns a `schedule` object for a scheduled workflow
  * trigger. For more information on `schedule` object properties:
  *
- * https://api.slack.com/future/triggers/scheduled#schedule
+ * https://api.slack.com/automation/triggers/scheduled#schedule
  */
 // deno-lint-ignore no-explicit-any
 export function getTriggerSchedule(debugMode: boolean, inputs: any) {
@@ -182,7 +182,7 @@ export function getTriggerSchedule(debugMode: boolean, inputs: any) {
    * To set this value for production apps, use the `slack env var add`.
    *
    * More on using environment variables:
-   * https://api.slack.com/future/run#environment-variables
+   * https://api.slack.com/automation/environment-variables
    */
   if (debugMode) {
     console.log("DEBUG MODE IS ON");
@@ -208,7 +208,7 @@ export function getTriggerSchedule(debugMode: boolean, inputs: any) {
  * This helper function returns a frequency object required to create a
  * a scheduled workflow trigger. For more information on the scheduled
  * trigger `frequency` object properties:
- * https://api.slack.com/future/triggers/scheduled#frequency
+ * https://api.slack.com/automation/triggers/scheduled#frequency
  */
 // deno-lint-ignore no-explicit-any
 function getTriggerScheduleFrequency(inputs: any) {

@@ -4,7 +4,7 @@ import { DatastoreItem } from "deno-slack-api/types.ts";
 /**
  * Datastores are a Slack-hosted location to store
  * and retrieve data for your app.
- * https://api.slack.com/future/datastores
+ * https://api.slack.com/automation/datastores
  */
 const RotationDatastore = DefineDatastore({
   name: "rotations",

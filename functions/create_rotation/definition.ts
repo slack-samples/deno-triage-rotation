@@ -8,7 +8,7 @@ const CREATE_ROTATION_FUNCTION_CALLBACK_ID = "create_rotation";
  * some inputs describing the form, validates, and saves to a database
  *
  * More on defining functions here:
- * https://api.slack.com/future/functions/custom
+ * https://api.slack.com/automation/functions/custom
  */
 export const CreateRotationFunctionDefinition = DefineFunction({
   callback_id: CREATE_ROTATION_FUNCTION_CALLBACK_ID,

@@ -6,10 +6,10 @@ import { FormatRotationFunctionDefinition } from "../functions/format_rotation/d
 /**
  * A workflow is a set of steps that are executed in order.
  * Each step in a workflow is a function.
- * https://api.slack.com/future/workflows
+ * https://api.slack.com/automation/workflows
  *
  * This workflow uses interactivity. Learn more at:
- * https://api.slack.com/future/forms#add-interactivity
+ * https://api.slack.com/automation/forms#add-interactivity
  */
 const AdvanceRotationWorkflow = DefineWorkflow({
   callback_id: "advance_rotation",

@@ -9,7 +9,7 @@ export const ADVANCE_ROTATION_FUNCTION_CALLBACK_ID = "advance_rotation_fn";
  * rotation and updates the RotationsDatabase with a new order
 
  * More on defining functions here:
- * https://api.slack.com/future/functions/custom
+ * https://api.slack.com/automation/functions/custom
  */
 export const AdvanceRotationFunctionDefinition = DefineFunction({
   callback_id: ADVANCE_ROTATION_FUNCTION_CALLBACK_ID,

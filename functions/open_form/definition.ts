@@ -13,7 +13,7 @@ export const OPEN_FORM_FUNCTION_CALLBACK_ID = "open_form";
  * the form will be opened with existing values supplied.
  *
  * More on defining functions here:
- * https://api.slack.com/future/functions/custom
+ * https://api.slack.com/automation/functions/custom
  */
 export const OpenFormFunctionDefinition = DefineFunction({
   callback_id: OPEN_FORM_FUNCTION_CALLBACK_ID,
