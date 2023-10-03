@@ -8,7 +8,7 @@ import {
   MultiUsersSelect,
   Option,
   SectionBlock,
-} from "npm:@slack/types";
+} from "https://cdn.skypack.dev/@slack/types?dts";
 
 import { Rotation } from "../../datastores/rotations.ts";
 import { WEEKDAY } from "../create_rotation/handler.ts";
