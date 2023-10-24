@@ -7,7 +7,7 @@ import UserArray from "./types/user_array.ts";
 /**
  * The app manifest contains the app's configuration. This
  * file defines attributes like app name and description.
- * https://api.slack.com/future/manifest
+ * https://api.slack.com/automation/manifest
  */
 export default Manifest({
   name: "Rotation App",
@@ -15,7 +15,9 @@ export default Manifest({
     "Create and manage an ordered work rotation and list of assignees",
   icon: "assets/icon.png",
   workflows: [ManageRotationWorkflow, AdvanceRotationWorkflow],
-  outgoingDomains: ["cdn.skypack.dev"],
+  outgoingDomains: Deno.env.get("SLACK_ENV") === "deployed"
+    ? []
+    : ["cdn.skypack.dev"],
   types: [UserArray],
   datastores: [RotationDatastore],
   botScopes: [
