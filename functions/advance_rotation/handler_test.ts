@@ -1,26 +1,35 @@
 import { SlackFunctionTester } from "deno-slack-sdk/mod.ts";
-import { assertEquals } from "https://deno.land/std@0.153.0/testing/asserts.ts";
+import { assertEquals } from "@std/assert";
 import AdvanceRotationFunction from "./handler.ts";
 import { ADVANCE_ROTATION_FUNCTION_CALLBACK_ID } from "./definition.ts";
-import * as mf from "https://deno.land/x/mock_fetch@0.3.0/mod.ts";
+import { stub } from "@std/testing/mock";
 
 const { createContext } = SlackFunctionTester(
   ADVANCE_ROTATION_FUNCTION_CALLBACK_ID,
 );
 
-// Replaces globalThis.fetch with the mocked copy
-mf.install();
+Deno.test("Sample function test", async () => {
+  // Replaces globalThis.fetch with the mocked copy
+  using _stubFetch = stub(
+    globalThis,
+    "fetch",
+    (url: string | URL | Request, options?: RequestInit) => {
+      const request = url instanceof Request ? url : new Request(url, options);
 
-mf.mock("POST@/api/apps.datastore.put", () => {
-  return new Response(
-    `{"ok": true, "item": {"repeats_every": "day"}}`,
-    {
-      status: 200,
+      assertEquals(request.method, "POST");
+      assertEquals(request.url, "https://slack.com/api/apps.datastore.put");
+
+      return Promise.resolve(
+        new Response(
+          `{"ok": true, "item": {"repeats_every": "day"}}`,
+          {
+            status: 200,
+          },
+        ),
+      );
     },
   );
-});
 
-Deno.test("Sample function test", async () => {
   const inputs = {
     rotation: {
       order: ["testuser1"],
@@ -35,7 +44,7 @@ Deno.test("Sample function test", async () => {
   };
 
   const { outputs } = await AdvanceRotationFunction(createContext({ inputs }));
-  await assertEquals(
+  assertEquals(
     outputs?.rotation.repeats_every,
     "day",
   );

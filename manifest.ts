@@ -15,7 +15,7 @@ export default Manifest({
     "Create and manage an ordered work rotation and list of assignees",
   icon: "assets/icon.png",
   workflows: [ManageRotationWorkflow, AdvanceRotationWorkflow],
-  outgoingDomains: ["cdn.skypack.dev"],
+  outgoingDomains: [],
   types: [UserArray],
   datastores: [RotationDatastore],
   botScopes: [
