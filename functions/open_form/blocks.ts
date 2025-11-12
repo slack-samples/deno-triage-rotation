@@ -1,4 +1,4 @@
-import {
+import type {
   ActionsBlock,
   Button,
   DividerBlock,
@@ -8,9 +8,8 @@ import {
   MultiUsersSelect,
   Option,
   SectionBlock,
-} from "npm:@slack/types@2.11";
-
-import { Rotation } from "../../datastores/rotations.ts";
+} from "@slack/types";
+import type { Rotation } from "../../datastores/rotations.ts";
 import { WEEKDAY } from "../create_rotation/handler.ts";
 
 // constants
