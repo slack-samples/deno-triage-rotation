@@ -1,5 +1,5 @@
-import { SlackFunction } from "deno-slack-sdk/mod.ts";
-import { DatastoreItem } from "deno-slack-api/types.ts";
+import { SlackFunction } from "@slack/sdk";
+import { DatastoreItem } from "@slack/api/types";
 
 import { AdvanceRotationFunctionDefinition } from "./definition.ts";
 

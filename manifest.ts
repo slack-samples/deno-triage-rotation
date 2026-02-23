@@ -1,4 +1,4 @@
-import { Manifest } from "deno-slack-sdk/mod.ts";
+import { Manifest } from "@slack/sdk";
 import AdvanceRotationWorkflow from "./workflows/advance_rotation.ts";
 import ManageRotationWorkflow from "./workflows/manage_rotation.ts";
 import RotationDatastore from "./datastores/rotations.ts";

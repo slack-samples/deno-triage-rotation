@@ -1,4 +1,4 @@
-import { DefineFunction } from "deno-slack-sdk/mod.ts";
+import { DefineFunction } from "@slack/sdk";
 import { OpenFormFunctionDefinition } from "../open_form/definition.ts";
 
 const CREATE_ROTATION_FUNCTION_CALLBACK_ID = "create_rotation";
