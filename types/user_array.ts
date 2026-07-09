@@ -1,4 +1,4 @@
-import { DefineType, Schema } from "deno-slack-sdk/mod.ts";
+import { DefineType, Schema } from "@slack/sdk";
 
 /**
  * This custom type is used to define a array of slack user
