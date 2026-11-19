@@ -1,4 +1,4 @@
-import { SlackFunctionTester } from "deno-slack-sdk/mod.ts";
+import { SlackFunctionTester } from "@slack/sdk";
 import { assertEquals } from "@std/assert";
 import AdvanceRotationFunction from "./handler.ts";
 import { ADVANCE_ROTATION_FUNCTION_CALLBACK_ID } from "./definition.ts";

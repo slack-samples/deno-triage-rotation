@@ -1,4 +1,4 @@
-import { DefineFunction, Schema } from "deno-slack-sdk/mod.ts";
+import { DefineFunction, Schema } from "@slack/sdk";
 import RotationDatastore from "../../datastores/rotations.ts";
 
 export const GET_ROTATION_FUNCTION_CALLBACK_ID = "get_rotation";
