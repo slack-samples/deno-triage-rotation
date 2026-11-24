@@ -2,7 +2,7 @@ import {
   BlockActionHandler,
   ViewClosedHandler,
   ViewSubmissionHandler,
-} from "deno-slack-sdk/functions/interactivity/types.ts";
+} from "@slack/sdk/functions/interactivity/types";
 
 import RotationDatastore from "../../datastores/rotations.ts";
 import { OpenFormFunctionDefinition as OpenFormFunction } from "./definition.ts";

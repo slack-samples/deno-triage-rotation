@@ -1,4 +1,4 @@
-import { SlackFunction } from "deno-slack-sdk/mod.ts";
+import { SlackFunction } from "@slack/sdk";
 import { FormatRotationFunctionDefinition } from "./definition.ts";
 
 export default SlackFunction(FormatRotationFunctionDefinition, ({ inputs }) => {

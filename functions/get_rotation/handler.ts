@@ -1,4 +1,4 @@
-import { SlackFunction } from "deno-slack-sdk/mod.ts";
+import { SlackFunction } from "@slack/sdk";
 
 import { GetRotationFunctionDefinition } from "./definition.ts";
 

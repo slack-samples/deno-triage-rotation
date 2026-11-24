@@ -1,4 +1,4 @@
-import { DefineWorkflow, Schema } from "deno-slack-sdk/mod.ts";
+import { DefineWorkflow, Schema } from "@slack/sdk";
 import { CreateRotationFunctionDefinition } from "../functions/create_rotation/definition.ts";
 import { GetRotationFunctionDefinition } from "../functions/get_rotation/definition.ts";
 import { OpenFormFunctionDefinition } from "../functions/open_form/definition.ts";
